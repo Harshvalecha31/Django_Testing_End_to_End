@@ -4,10 +4,22 @@
 </head>
 <body>
 	<form method = "POST">
+	{% csrf_token %}
 	{{form}}
 	<br>
 	<button type = "submit">Submit</button>
 	</form>
+	<br>
+	<table>
+		{% for i in objs %}
+		<tr>
+			<td>{{i.name}}</td>
+			<td>{{i.age}}</td>
+			<td>{{i.standard}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+
 </body>
 
 </html>
